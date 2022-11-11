@@ -408,7 +408,7 @@
                                             <div class="mb-4">
                                                 <h5>Scenario 6 :</h5>
                                                 <p id="scenario6">Replace Me</p>
-                                                <button onclick="Scenario6()" class="btn btn-primary">Put your text here</button>
+                                                <button onclick="Scenario6()" class="btn btn-primary">Click and Type  a Text</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -439,7 +439,7 @@
                                     <tr>
                                         <td>
                                             <div class="mb-4">
-                                                <h5>Scenario 10 :</h5>
+                                                <h5>THERE IS NO OVERLOADING IN JAVASCRIPT</h5>
                                                 <p id="scenario10"></p>
                                             </div>
                                         </td>
@@ -475,8 +475,9 @@
         document.getElementById('scenario6').innerHTML = getInput;
     }
 
-    
-    window.onload = function () {   
+
+    window.onload = function () {
+        //FOR SCENARIO 8
             const person = {
                 name: "Dom",
                 age: "30",
@@ -485,6 +486,7 @@
             for (const key in person) {
                 if (person.hasOwnProperty(key)) {
                     console.log(`${key}: ${person[key]}`);
+                    document.getElementById('scenario7').innerHTML = person;
                 }
         }
 
@@ -496,13 +498,18 @@
 
         }
 
-        const array1 = [1, 2, 3, 5, 9];
+        const array1 = [1, 2, 3, 5, 9, 10];
         const array2 = [1, 3, 5, 8];
         const result = performIntersection(array1, array2);
         document.getElementById('scenario8').innerHTML = result;
+
     };
 
- 
+
+
+  
+
+    
     //COMPUTE TOTAL TIME DURATION FOR PAGE 1 AND PAGE 2
     const form = document.getElementById('form');
     const startTime = localStorage.getItem("time_start");
@@ -514,10 +521,11 @@
     const getName = localStorage.getItem("getName");
     const getDate = new Date();
     const dateToNumber = getDate.getTime();
-    document.getElementById('scenario10').innerHTML = "This is the converted number " + dateToNumber + " of this date: " + getDate.toLocaleDateString();
+    document.getElementById('scenario9').innerHTML = "This is the converted number " + dateToNumber + " of this date: " + getDate.toLocaleDateString();
     document.getElementById('time').innerHTML = totalTime + " Seconds";
     document.getElementById('id').innerHTML = "ID: " + getID;
     document.getElementById('name').innerHTML = "Name: " + getName;
+    
    
 
 </script>
