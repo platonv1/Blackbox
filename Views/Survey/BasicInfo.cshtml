@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BasicInfo>
+
+<div class="table-responsive">
+    <form id="form">
+        <div class="mb-4">
+            <h3>Scenario 2</h3>
+        </div>
+        <table class="table text-center table-striped table-hover" id="basic-datatables" cellspacing="1">
+            <thead class="bg-dark text-light">
+
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Age</td>
+                        <td>@item.Location</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
+</div>
+<div>
+    <a onclick="Scenario4()" asp-controller="Survey" asp-action="LastPage" class="btn btn-primary" style="float: right;">Next Page</a>
+    
+</div>
+
+
+<script type="text/javascript">
+    //CAPTURE THE START TIME AFTER THE  SECOND PAGE LOAD
+ 
+    //window.onload = alert(localStorage.getItem("time_start"));
+    window.onload = function () {
+        var getTimeEnd = new Date();;
+        localStorage.setItem("time_ends", getTimeEnd);
+    }
+
+    function Scenario4() {
+        var getID = prompt('(Scenario4) Enter your ID: ');
+        var getName = prompt('(Scenario4) Select a name from the table');
+        localStorage.setItem("getName", getName);
+        localStorage.setItem("getID", getID);
+    }
+
+    //localStorage.clear();
+    //localStorage.removeItem('getName');
+</script>
